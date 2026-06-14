@@ -110,9 +110,9 @@ rectangleType rectangleType::operator--(int){
 
 rectangleType rectangleType::operator+(const rectangleType& rectangle) const{
     rectangleType temp;
-    
-    temp.length = length - rectangle.length;
-    temp.width = width - rectangle.width;
+
+    temp.length = length + rectangle.length;
+    temp.width = width + rectangle.width;
     return temp;
 
 }
@@ -120,12 +120,8 @@ rectangleType rectangleType::operator+(const rectangleType& rectangle) const{
 rectangleType rectangleType::operator-(const rectangleType& rectangle) const{
     rectangleType temp;
 
-    if (length - rectangle.length < 0){
-        cout << "Negative length, aborting operation." << endl;
-        return *this;
-    }
-    else if (width - rectangle.width < 0){
-        cout << "Negative width, aborting operation." << endl;
+    if (length - rectangle.length < 0 || width - rectangle.width < 0){
+        cout << "Negative value would occur, aborting operation." << endl;
         return *this;
     }
     else{
@@ -133,6 +129,24 @@ rectangleType rectangleType::operator-(const rectangleType& rectangle) const{
         temp.width = width - rectangle.width;
         return temp;
     }
+}
+
+rectangleType rectangleType::operator*(const rectangleType& rectangle) const{
+    rectangleType temp;
+
+    temp.length = length * rectangle.length;
+    temp.width = width * rectangle.width;
+    return temp;
+
+}
+
+rectangleType rectangleType::operator/(const rectangleType& rectangle) const{
+    rectangleType temp;
+
+    temp.length = length / rectangle.length;
+    temp.width = width / rectangle.width;
+    return temp;
+
 }
 
 bool rectangleType::operator==(const rectangleType& rectangle) const{
@@ -157,4 +171,12 @@ bool rectangleType::operator>=(const rectangleType& rectangle) const{
 
 bool rectangleType::operator<=(const rectangleType& rectangle) const{
     return area() <= rectangle.area();
+}
+
+ostream& operator<<(ostream& osObject, const rectangleType& rectangle){
+
+}
+
+istream& operator>>(istream& isObject, const rectangleType& rectangle){
+    
 }
