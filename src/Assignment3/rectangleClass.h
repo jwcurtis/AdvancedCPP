@@ -143,6 +143,10 @@ rectangleType rectangleType::operator*(const rectangleType& rectangle) const{
 rectangleType rectangleType::operator/(const rectangleType& rectangle) const{
     rectangleType temp;
 
+    if(rectangle.width == 0 || rectangle.length == 0){
+        cout << "Division by 0, aborting operation" << endl;
+        return *this;
+    }
     temp.length = length / rectangle.length;
     temp.width = width / rectangle.width;
     return temp;
@@ -179,7 +183,6 @@ ostream& operator<<(ostream& osObject, const rectangleType& rectangle){
 }
 
 istream& operator>>(istream& isObject, rectangleType& rectangle){
-    double length, width;
     isObject >> rectangle.length >> rectangle.width;
     return isObject;
 }
