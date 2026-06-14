@@ -174,9 +174,12 @@ bool rectangleType::operator<=(const rectangleType& rectangle) const{
 }
 
 ostream& operator<<(ostream& osObject, const rectangleType& rectangle){
-
+    osObject << "length = " << rectangle.length << "; Width = " << rectangle.width;
+    return osObject;
 }
 
-istream& operator>>(istream& isObject, const rectangleType& rectangle){
-    
+istream& operator>>(istream& isObject, rectangleType& rectangle){
+    double length, width;
+    isObject >> rectangle.length >> rectangle.width;
+    return isObject;
 }
