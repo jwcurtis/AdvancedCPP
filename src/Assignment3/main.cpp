@@ -20,16 +20,16 @@ int main(){
     cout << "Print: " << rect5 << endl;
 
     cout << "Rectangle 1: " << rect1 << ". Rectangle 2: " << rect2 << endl;
-    cout << "Rectange 1 + 2: " << rect1+rect2 << endl;
+    cout << "Rectangle 1 + 2: " << rect1+rect2 << endl;
 
     cout << "Rectangle 1: " << rect1 << ". Rectangle 2: " << rect2 << endl;
-    cout << "Rectange 1 - 2: " << rect1-rect2 << endl;
+    cout << "Rectangle 1 - 2: " << rect1-rect2 << endl;
 
     cout << "Rectangle 1: " << rect1 << ". Rectangle 2: " << rect2 << endl;
-    cout << "Rectange 1 * 2: " << rect1*rect2 << endl;
+    cout << "Rectangle 1 * 2: " << rect1*rect2 << endl;
 
     cout << "Rectangle 1: " << rect1 << ". Rectangle 2: " << rect2 << endl;
-    cout << "Rectange 1 / 2: " << rect1/rect2 << endl;
+    cout << "Rectangle 1 / 2: " << rect1/rect2 << endl;
 
     cout << "Rectangle 5: " << rect5 << endl;
     cout << "++Rectangle 5: " << ++rect5 << endl;
@@ -44,29 +44,30 @@ int main(){
     cout << "Rectangle 5--: " << rect5-- << endl;
 
     cout << "Rectangle 1: " << rect1 << ". Rectangle 2: " << rect2 << endl;
-    cout << "Rectange 1 == 2: " << (rect1 == rect2) << endl;
+    cout << "Rectangle 1 == 2: " << (rect1 == rect2) << endl;
 
     cout << "Rectangle 1: " << rect1 << ". Rectangle 3: " << rect3 << endl;
-    cout << "Rectange 1 == 3: " << (rect1 == rect3) << endl;
+    cout << "Rectangle 1 == 3: " << (rect1 == rect3) << endl;
 
     cout << "Rectangle 1: " << rect1 << ". Rectangle 2: " << rect2 << endl;
-    cout << "Rectange 1 != 2: " << (rect1 != rect2) << endl;
+    cout << "Rectangle 1 != 2: " << (rect1 != rect2) << endl;
 
     cout << "Rectangle 1: " << rect1 << ". Rectangle 3: " << rect3 << endl;
-    cout << "Rectange 1 != 3: " << (rect1 != rect3) << endl;
+    cout << "Rectangle 1 != 3: " << (rect1 != rect3) << endl;
 
     
 
     cout << "Rectangle 1: " << rect1 << ". Rectangle 2: " << rect2 << endl;
-    cout << "Rectange 1 > 2: " << (rect1 > rect2) << endl;
+    cout << "Rectangle 1 > 2: " << (rect1 > rect2) << endl;
 
     cout << "Rectangle 1: " << rect1 << ". Rectangle 3: " << rect3 << endl;
-    cout << "Rectange 1 >= 3: " << (rect1 >= rect3) << endl;
+    cout << "Rectangle 1 >= 3: " << (rect1 >= rect3) << endl;
 
     cout << "Rectangle 1: " << rect1 << ". Rectangle 2: " << rect2 << endl;
-    cout << "Rectange 1 < 2: " << (rect1 < rect2) << endl;
+    cout << "Rectangle 1 < 2: " << (rect1 < rect2) << endl;
 
     cout << "Rectangle 1: " << rect1 << ". Rectangle 3: " << rect3 << endl;
-    cout << "Rectange 1 <= 3: " << (rect1 <= rect3) << endl;
+    cout << "Rectangle 1 <= 3: " << (rect1 <= rect3) << endl;
 
+    return 0;
 }
