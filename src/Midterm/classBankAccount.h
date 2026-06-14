@@ -28,6 +28,8 @@ class bankAccount{
         string lastName;
         double accountBal;
 
+        //Deposit/Withrdaw history?
+
 };
 
 string bankAccount::getName() const{
