@@ -17,9 +17,12 @@ class bankAccount{
         virtual void accountWithdraw(double toWithdraw) = 0;
         virtual void createStatement() = 0;
 
+        bankAccount(string first, string last, int accountNum, double accountBal)
+        : firstName(first), lastName(last),accountNum(accountNum),accountBal(accountBal){}
+        
+        virtual ~bankAccount() = default;
 
-
-    private:
+    protected:
         int accountNum;
         string firstName;
         string lastName;
