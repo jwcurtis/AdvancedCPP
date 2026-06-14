@@ -6,7 +6,10 @@ using namespace std;
 
 class checkingAccount: public bankAccount{
     public:
-        virtual void writeCheck(double checkAmount) = 0;
+        checkingAccount(string first, string last, int acctNum, double acctBal)
+        :bankAccount(first,last,acctNum,acctBal){}
         
-    private:
+        virtual void writeCheck(double checkAmount) = 0;
+
+    protected:
 };
