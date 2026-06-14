@@ -34,7 +34,7 @@ class rectangleType{
         rectangleType();
         rectangleType(double length, double width);
 
-    private:
+    protected:
         double length;
         double width;
 };
@@ -106,4 +106,55 @@ rectangleType rectangleType::operator--(int){
     if(width>0){width--;}
 
     return temp;
+}
+
+rectangleType rectangleType::operator+(const rectangleType& rectangle) const{
+    rectangleType temp;
+    
+    temp.length = length - rectangle.length;
+    temp.width = width - rectangle.width;
+    return temp;
+
+}
+
+rectangleType rectangleType::operator-(const rectangleType& rectangle) const{
+    rectangleType temp;
+
+    if (length - rectangle.length < 0){
+        cout << "Negative length, aborting operation." << endl;
+        return *this;
+    }
+    else if (width - rectangle.width < 0){
+        cout << "Negative width, aborting operation." << endl;
+        return *this;
+    }
+    else{
+        temp.length = length - rectangle.length;
+        temp.width = width - rectangle.width;
+        return temp;
+    }
+}
+
+bool rectangleType::operator==(const rectangleType& rectangle) const{
+    return area() == rectangle.area();
+}
+
+bool rectangleType::operator!=(const rectangleType& rectangle) const{
+    return area() != rectangle.area();
+}
+
+bool rectangleType::operator>(const rectangleType& rectangle) const{
+    return area() > rectangle.area();
+}
+
+bool rectangleType::operator<(const rectangleType& rectangle) const{
+    return area() < rectangle.area();
+}
+
+bool rectangleType::operator>=(const rectangleType& rectangle) const{
+    return area() >= rectangle.area();
+}
+
+bool rectangleType::operator<=(const rectangleType& rectangle) const{
+    return area() <= rectangle.area();
 }
