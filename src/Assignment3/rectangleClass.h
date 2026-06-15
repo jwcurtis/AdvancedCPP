@@ -40,11 +40,11 @@ class rectangleType{
 };
 
 void rectangleType::setDimensions(double length, double width){
-    if(length >= 0)
+    if(length > 0)
         this->length = length;
     else this->length = 0;
 
-    if(width >= 0)
+    if(width > 0)
         this->width = width;
     else this->width = 0;
 }
@@ -95,15 +95,15 @@ rectangleType rectangleType::operator++(int){
 }
 
 rectangleType& rectangleType::operator--(){
-    if(length>0){--length;}
-    if(width>0){--width;}
+    if(length>1){--length;}
+    if(width>1){--width;}
     return *this;
 }
 
 rectangleType rectangleType::operator--(int){
     rectangleType temp = *this;
-    if(length>0){length--;}
-    if(width>0){width--;}
+    if(length>1){length--;}
+    if(width>1){width--;}
 
     return temp;
 }
@@ -120,8 +120,8 @@ rectangleType rectangleType::operator+(const rectangleType& rectangle) const{
 rectangleType rectangleType::operator-(const rectangleType& rectangle) const{
     rectangleType temp;
 
-    if (length - rectangle.length < 0 || width - rectangle.width < 0){
-        cout << "Negative value would occur, aborting operation." << endl;
+    if (length - rectangle.length < 1 || width - rectangle.width < 1){
+        cout << "Non-positive value would occur, aborting operation." << endl;
         return *this;
     }
     else{
@@ -183,6 +183,14 @@ ostream& operator<<(ostream& osObject, const rectangleType& rectangle){
 }
 
 istream& operator>>(istream& isObject, rectangleType& rectangle){
-    isObject >> rectangle.length >> rectangle.width;
+    double inLength, inWidth;
+    isObject >> inLength >> inWidth;
+    if(inLength > 0 && inWidth > 0){
+        rectangle.length = inLength;
+        rectangle.width = inWidth;
+    }
+    else{
+        cerr << "Invalid input. Please enter positive values." << endl;
+    }
     return isObject;
 }
