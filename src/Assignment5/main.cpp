@@ -110,5 +110,5 @@ binaryPrint(testList5, (sizeof(testList5) / sizeof(testList5[0])),-47);
 binaryPrint(testList5, (sizeof(testList5) / sizeof(testList5[0])),13);
 binaryPrint(testList5, (sizeof(testList5) / sizeof(testList5[0])),0);
 
-
+return 0;
 }
