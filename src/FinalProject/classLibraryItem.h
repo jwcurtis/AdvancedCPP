@@ -12,7 +12,7 @@ class libraryItem{
         int getId() const;
         int getYear() const;
 
-        virtual void getType() = 0;
+        virtual string getType() = 0;
         virtual void display() = 0;
 
         libraryItem(string name, int id, int year);
