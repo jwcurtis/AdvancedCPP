@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <queue>
 using namespace std;
 
 #include "classLibraryItem.h"
@@ -11,10 +12,16 @@ class DVD: public libraryItem{
         string getType() const;
         string getStudio() const;
         int getDuration() const;
+
+        DVD(string name, int id, int year, string studio, int duration);
     private:
         string studio;
         int duration;
 };
+
+DVD::DVD(string name, int id, int year,string studio, int duration)
+    : libraryItem(name, id, year), studio(studio), duration(duration){
+}
 
 string DVD::getType() const{
     return "DVD";

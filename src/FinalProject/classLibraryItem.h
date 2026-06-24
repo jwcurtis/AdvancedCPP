@@ -1,5 +1,9 @@
 #include <iostream>
 #include <string>
+#include <queue>
+
+#include "classUser.h"
+
 using namespace std;
 
 class libraryItem{
@@ -15,6 +19,8 @@ class libraryItem{
         virtual string getType() = 0;
         virtual void display() = 0;
 
+        bool operator==(const libraryItem& other) const;
+
         libraryItem(string name, int id, int year);
         virtual ~libraryItem();
 
@@ -22,6 +28,7 @@ class libraryItem{
         string name;
         int id;
         int year;
+        queue<User> userQueue;
 };
 
 void libraryItem::setName(string inName){
@@ -52,4 +59,8 @@ libraryItem::libraryItem(string name, int id, int year){
     this-> name = name;
     this-> id = id;
     this-> year = year;
+}
+
+bool libraryItem::operator==(const libraryItem& other) const{
+    return (id == other.id);
 }

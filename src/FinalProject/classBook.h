@@ -9,14 +9,21 @@ class Book: public libraryItem{
     friend istream& operator>>(istream&, Book &);
     public:
 
-
         string getType() const;
         string getAuthor() const;
         int getPages() const;
+
+        Book(string name, int id, int year,string author, int pages);
+
     private:
         string author;
         int pages;
+        
 };
+
+Book::Book(string name, int id, int year,string author, int pages)
+    : libraryItem(name, id, year), author(author), pages(pages){
+}
 
 string Book::getType() const{
     return "Book";
