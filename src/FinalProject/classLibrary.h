@@ -26,12 +26,15 @@ void Library::addItem(libraryItem* newItem){
 }
 
 void Library::removeItem(int id){
-    try{
-        libraryItem* refItem = searchById(id);
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
+    
+    libraryItem* refItem = searchById(id);
+
+    for(auto iterator = items.begin(); iterator != items.end(); ++iterator){
+        if(*iterator == refItem){
+            delete *iterator;
+            items.erase(iterator);
+            return;
+        }
     }
 }
 
