@@ -13,8 +13,23 @@
 using namespace std;
 
 int main(){
-    string fName1 = "John";
-    string lName1 = "Doe";
     certificateOfDeposit CDAccount("John","Doe",123,100.00);
+    CDAccount.createStatement();
+
+    highInterestCheckingAccount HICAccount("Jane","Doe", 456, 500.00);
+    HICAccount.createStatement();
+
+    highInterestSavingsAccount HISAccount("Bob","Builder",246,1000.00);
+    HISAccount.createStatement();
+
+    noServiceChargeCheckingAccount NSCCAccount("Abdullah","Mohamed",321,100000000.00);
+    NSCCAccount.createStatement();
+
+    savingsAccount SAccount("Cecilia","Stewart",543,15000000.00);
+    SAccount.createStatement();
+
+    serviceChargeCheckingAccount SCCAccount("Jacob","Curtis",789,999923010.00);
+    SCCAccount.createStatement();
+    
     return 0;
 }
