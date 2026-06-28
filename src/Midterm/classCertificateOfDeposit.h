@@ -7,8 +7,13 @@ class certificateOfDeposit: public bankAccount{
         certificateOfDeposit(string first, string last, int acctNum, double acctBal, double interest = 0.08, int maturityMonths = 6, double earlyPenalty = 0.05)
         :bankAccount(first,last,acctNum,acctBal),interest(interest),maturityMonths(maturityMonths),currMaturity(1),earlyPenalty(earlyPenalty){}
 
+        void createStatement() override;
         void accountDeposit(double amount) override;
         void accountWithdraw(double amount) override;
+
+        int getMaturity() const;
+        double getInterest() const;
+        double getPenalty() const;
 
     private:
         int maturityMonths;
@@ -27,4 +32,26 @@ void certificateOfDeposit::accountWithdraw(double amount){
     if(currMaturity == maturityMonths){setAccountBal(getAccountBal() - amount);}
     else{setAccountBal((getAccountBal() - amount)-(amount*earlyPenalty));}
 
+}
+
+int certificateOfDeposit::getMaturity() const{
+    return currMaturity;
+}
+
+double certificateOfDeposit::getInterest() const{
+    return interest;
+}
+
+double certificateOfDeposit::getPenalty() const{
+    return earlyPenalty;
+}
+
+void certificateOfDeposit::createStatement(){
+    cout << "Account statement for: " << getName() << endl;
+    cout << "Account type: Certificate of Deposit" << endl;
+    cout << "Account number: " << getAccountNum() << endl;
+    cout << "Account balance: " << getAccountBal() << endl;
+    cout << "Account interest: " << getInterest() << endl;
+    cout << "Account maturity: " << (getMaturity()) << endl;
+    cout << "Early withdraw penalty: " << getPenalty() << endl;
 }
