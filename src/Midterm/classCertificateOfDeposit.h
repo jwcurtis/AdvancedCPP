@@ -11,6 +11,8 @@ class certificateOfDeposit: public bankAccount{
         void accountDeposit(double amount) override;
         void accountWithdraw(double amount) override;
 
+        void setMaturity(int months);
+
         int getMaturity() const;
         double getInterest() const;
         double getPenalty() const;
@@ -32,6 +34,11 @@ void certificateOfDeposit::accountWithdraw(double amount){
     if(currMaturity == maturityMonths){setAccountBal(getAccountBal() - amount);}
     else{setAccountBal((getAccountBal() - amount)-(amount*earlyPenalty));}
 
+}
+
+void certificateOfDeposit::setMaturity(int months){
+    if (currMaturity < 0){ currMaturity = 0;}
+    else{currMaturity = months;}
 }
 
 int certificateOfDeposit::getMaturity() const{

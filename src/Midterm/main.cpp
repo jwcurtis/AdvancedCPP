@@ -13,7 +13,19 @@
 using namespace std;
 
 int main(){
-    certificateOfDeposit CDAccount("John","Doe",123,100.00);
+    certificateOfDeposit CDAccount("John","Doe",123,23461.00);
+
+    cout << "Testing CD account: " << endl;
+    CDAccount.createStatement();
+    cout << "Testing CD account deposit: " << endl;
+    CDAccount.accountDeposit(500.00);
+    CDAccount.createStatement();
+    cout << "Testing CD account early withdraw: " << endl;
+    CDAccount.accountWithdraw(500);
+    CDAccount.createStatement();
+    cout << "Testing CD account set maturity and mature withdraw: " << endl;
+    CDAccount.setMaturity(6);
+    CDAccount.accountWithdraw(500);
     CDAccount.createStatement();
 
     highInterestCheckingAccount HICAccount("Jane","Doe", 456, 500.00);
