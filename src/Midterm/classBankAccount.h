@@ -1,3 +1,5 @@
+#pragma once
+
 #include <iostream>
 #include <string>
 using namespace std;
@@ -23,12 +25,10 @@ class bankAccount{
         virtual ~bankAccount() = default;
 
     protected:
-        int accountNum;
         string firstName;
         string lastName;
+        int accountNum;
         double accountBal;
-
-        //Deposit/Withrdaw history?
 
 };
 

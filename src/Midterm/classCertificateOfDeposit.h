@@ -1,3 +1,5 @@
+#pragma once
+
 #include "classBankAccount.h"
 
 using namespace std;
@@ -18,9 +20,9 @@ class certificateOfDeposit: public bankAccount{
         double getPenalty() const;
 
     private:
+        double interest;  
         int maturityMonths;
         int currMaturity;
-        double interest;        
         double earlyPenalty;
 };
 

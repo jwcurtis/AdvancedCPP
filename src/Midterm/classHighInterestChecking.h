@@ -1,3 +1,5 @@
+#pragma once
+
 #include "classBankAccount.h"
 #include "classChecking.h"
 #include "classNoServiceChargeChecking.h"
@@ -18,4 +20,5 @@ void highInterestCheckingAccount::createStatement(){
     cout << "Account number: " << getAccountNum() << endl;
     cout << "Account balance: " << getAccountBal() << endl;
     cout << "Account interest: " << (getInterest()) << endl;
+    cout << "Minimum balance: " << getMinBalance() << endl;
 }

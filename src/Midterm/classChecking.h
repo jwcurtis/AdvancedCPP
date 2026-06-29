@@ -1,3 +1,5 @@
+#pragma once
+
 #include "classBankAccount.h"
 
 #include <iostream>

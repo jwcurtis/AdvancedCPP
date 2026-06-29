@@ -1,3 +1,5 @@
+#pragma once
+
 #include "classBankAccount.h"
 #include "classChecking.h"
 
@@ -51,17 +53,24 @@ void noServiceChargeCheckingAccount::createStatement(){
     cout << "Account number: " << getAccountNum() << endl;
     cout << "Account balance: " << getAccountBal() << endl;
     cout << "Account interest: " << (interest) << endl;
+    cout << "Minimum balance: " << getMinBalance() << endl;
 }
 
 void noServiceChargeCheckingAccount::writeCheck(bankAccount* checkReceiver, double amount){
-    try
-    {
+
+    if(amount < 0){
+        cerr<<"Cannot write check for non positive amount."<<endl;
+        return;
+    }
+
+    if((getAccountBal() - amount) < minBalance){
+        cerr<<"Cannot write check past the minimum account balance."<<endl;
+        return;
+    }
+
+
     accountWithdraw(amount);
     checkReceiver->accountDeposit(amount);
-    }
-    catch(const char* error)
-    {
-        cerr << error << endl;
-    }
+
     
 }

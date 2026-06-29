@@ -1,3 +1,5 @@
+#pragma once
+
 #include "classBankAccount.h"
 #include "classChecking.h"
 
@@ -25,19 +27,18 @@ void serviceChargeCheckingAccount::createStatement(){
 }
 
 void serviceChargeCheckingAccount::writeCheck(bankAccount* checkReceiver, double amount){
-    if(monthlyChecks<=0){
-        cerr<<"Mothly checkallowance depleted"<<endl;
+    if(amount < 0){
+        cerr<<"Cannot write check for non positive amount."<<endl;
         return;
     }
-    try
-    {
+
+    if((getAccountBal() - amount) < 0){
+        cerr<<"Cannot write check past the minimum account balance."<<endl;
+        return;
+    }
+
+
     accountWithdraw(amount);
     checkReceiver->accountDeposit(amount);
-    --monthlyChecks;
-    }
-    catch(const char* error)
-    {
-        cerr << error << endl;
-    }
-    
+
 }
