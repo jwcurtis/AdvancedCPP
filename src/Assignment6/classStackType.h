@@ -11,7 +11,8 @@ using namespace std;
 template <class Type>
 class stackType: public stackADT<Type>
 {
-    friend ostream& operator<<(ostream&, const stackType<Type>&);
+    template <class T>
+    friend ostream& operator<<(ostream&, const stackType<T>&);
     public:
 
         const stackType<Type>& operator=(const stackType<Type>&);

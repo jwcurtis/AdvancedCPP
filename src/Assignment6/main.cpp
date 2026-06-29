@@ -29,6 +29,23 @@ int main(){
     dummyStack = stack;
     cout << "Dummystack: " <<dummyStack << endl;
 
+    cout << "Testing the equality operator: " << endl;
+    if(stack == cpyStack){
+        cout << "The two stacks are equal." << endl;
+    }
+    else{
+        cout << "The two stacks are not equal." << endl;
+    }
+
+    stack.pop();
+    cout << "After popping the original stack: " << endl;
+    if(stack != cpyStack){
+        cout << "The two stacks are not equal." << endl;
+    }
+    else{
+        cout << "The two stacks are equal." << endl;
+    }
+
     return 0;
 }
 
